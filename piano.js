@@ -60,7 +60,13 @@ const createKey = ({name}) => {
 
 const play = (name) => {
     const audio = new Audio("./sound/" + name + ".mp3");
+    const el = document.querySelector("[sound = "+ name +"]");
+    console.log(el);
+    el.classList.add("active");
+    //setTimeout(function, time(ms)) 
+    setTimeout(() => el.classList.remove("active"), 200);
     audio.play();
+
 }
 
 sounds.forEach(sound => {
@@ -81,7 +87,7 @@ document.addEventListener("keyup",(event) => {
     // console.log(event.keyCode, event.key);
     const current = sounds.find(({keyCode}) => keyCode === event.keyCode);
     if(current){
-        console.log(current);
+        // console.log(current);
         play(current.name);
     }
 })

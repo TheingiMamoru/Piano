@@ -2,6 +2,6 @@
     height: 250px;
 
 }
-.key:active{
+.key.active{
     background-color: rgb(221, 217, 217);
 }
